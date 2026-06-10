@@ -1,0 +1,48 @@
+{
+  "eval_set_id": "sars_week4_alert",
+  "name": "SARS Week 4 — Expect ALERT Tier",
+  "eval_cases": [
+    {
+      "eval_id": "sars_w4_full_pipeline_alert",
+      "conversation": [
+        {
+          "user_content": {
+            "parts": [
+              {
+                "text": "Run the complete EWARS pipeline for guangdong-cn. SARS replay demo week 4. Filter: demo_tag=sars_replay, demo_week=4. Session: eval-sars-w4-full."
+              }
+            ]
+          },
+          "expected_tool_use": [
+            {
+              "tool_name": "find_documents",
+              "tool_input": { "collection": "signals" }
+            },
+            {
+              "tool_name": "find_documents",
+              "tool_input": { "collection": "baselines" }
+            },
+            {
+              "tool_name": "insert_document",
+              "tool_input": { "collection": "clusters" }
+            },
+            {
+              "tool_name": "insert_document",
+              "tool_input": { "collection": "threat_assessments" }
+            },
+            {
+              "tool_name": "insert_document",
+              "tool_input": { "collection": "situation_reports" }
+            }
+          ],
+          "reference": "The final threat tier must be ALERT. Composite score must be between 50 and 74. A situation report must be generated and stored in MongoDB with status=draft. Response must contain the word ALERT and must NOT contain the word EMERGENCY."
+        }
+      ],
+      "session_input": {
+        "app_name": "ewars_pipeline",
+        "user_id": "eval_user",
+        "state": {}
+      }
+    }
+  ]
+}

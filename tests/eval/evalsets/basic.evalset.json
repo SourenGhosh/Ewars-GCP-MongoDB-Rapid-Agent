@@ -1,0 +1,25 @@
+{
+  "eval_set_id": "ewars_basic",
+  "name": "EWARS Basic Smoke Evaluation",
+  "eval_cases": [
+    {
+      "eval_id": "health_check",
+      "conversation": [
+        {
+          "user_content": {
+            "parts": [
+              {
+                "text": "What is EWARS and what agents does the pipeline contain?"
+              }
+            ]
+          }
+        }
+      ],
+      "session_input": {
+        "app_name": "ewars_pipeline",
+        "user_id": "eval_user",
+        "state": {}
+      }
+    }
+  ]
+}

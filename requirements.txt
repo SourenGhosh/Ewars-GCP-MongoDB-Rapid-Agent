@@ -1,0 +1,21 @@
+fastapi==0.136.1
+python-dotenv==1.0.1
+
+
+# Google Cloud
+google-adk==1.33.0
+
+# MongoDB
+pymongo[srv]==4.7.2
+motor==3.4.0           # async MongoDB driver
+
+# HTTP / APIs
+aiohttp==3.9.5
+
+# Data
+numpy==1.26.4
+pandas==2.2.2
+
+# Utilities
+uuid==1.30
+structlog==24.1.0      # structured logging

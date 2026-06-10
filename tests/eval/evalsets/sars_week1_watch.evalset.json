@@ -1,0 +1,74 @@
+{
+  "eval_set_id": "sars_week1_watch",
+  "name": "SARS Week 1 — Expect WATCH Tier",
+  "eval_cases": [
+    {
+      "eval_id": "sars_w1_syndromic_analysis",
+      "conversation": [
+        {
+          "user_content": {
+            "parts": [
+              {
+                "text": "Run syndromic surveillance analysis for guangdong-cn using signals with demo_tag=sars_replay and demo_week=1."
+              }
+            ]
+          },
+          "expected_tool_use": [
+            {
+              "tool_name": "find_documents",
+              "tool_input": { "collection": "signals" }
+            },
+            {
+              "tool_name": "find_documents",
+              "tool_input": { "collection": "baselines" }
+            }
+          ],
+          "reference": "The syndromic analyst should detect SARI cases elevated above baseline, return overall_syndromic_score between 25 and 50, and classify trend as INCREASING. The analyst must not diagnose any specific disease or name a pathogen."
+        }
+      ],
+      "session_input": {
+        "app_name": "ewars_pipeline",
+        "user_id": "eval_user",
+        "state": {}
+      }
+    },
+    {
+      "eval_id": "sars_w1_full_pipeline_watch",
+      "conversation": [
+        {
+          "user_content": {
+            "parts": [
+              {
+                "text": "Run the complete EWARS surveillance pipeline for region guangdong-cn. SARS replay demo week 1. Filter signals: demo_tag=sars_replay, demo_week=1. Session: eval-sars-w1-full."
+              }
+            ]
+          },
+          "expected_tool_use": [
+            {
+              "tool_name": "find_documents",
+              "tool_input": { "collection": "signals" }
+            },
+            {
+              "tool_name": "find_documents",
+              "tool_input": { "collection": "baselines" }
+            },
+            {
+              "tool_name": "insert_document",
+              "tool_input": { "collection": "clusters" }
+            },
+            {
+              "tool_name": "insert_document",
+              "tool_input": { "collection": "threat_assessments" }
+            }
+          ],
+          "reference": "The pipeline must complete all 5 stages. The final threat tier must be WATCH. The composite score must be between 30 and 49. A situation report must NOT be generated for WATCH tier. The response must contain the word WATCH."
+        }
+      ],
+      "session_input": {
+        "app_name": "ewars_pipeline",
+        "user_id": "eval_user",
+        "state": {}
+      }
+    }
+  ]
+}

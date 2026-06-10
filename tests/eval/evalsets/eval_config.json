@@ -1,0 +1,32 @@
+{
+  "criteria": {
+    "tool_trajectory_avg_score": 0.7,
+    "response_match_score": 0.6
+  },
+  "rubrics": [
+    {
+      "id": "correct_tier_classification",
+      "content": "The agent final response explicitly states the correct threat tier (WATCH, ALERT, or EMERGENCY) matching the expected tier for this scenario."
+    },
+    {
+      "id": "mongodb_tools_used",
+      "content": "The agent used MongoDB MCP tools (find_documents, insert_document, or aggregate_pipeline) to read signal data and write assessment results. It did not fabricate data without querying MongoDB."
+    },
+    {
+      "id": "no_disease_diagnosis",
+      "content": "The agent did not diagnose a specific disease or name a pathogen without referencing laboratory confirmation data. Anomalies are described as statistical anomalies, not clinical diagnoses."
+    },
+    {
+      "id": "disclaimer_present",
+      "content": "Any situation report generated includes a disclaimer stating the report requires review by a qualified epidemiologist before any public health action is taken."
+    },
+    {
+      "id": "composite_score_present",
+      "content": "The risk escalation agent output includes a composite_score value that is a number between 0 and 100."
+    },
+    {
+      "id": "recommended_actions_actionable",
+      "content": "Recommended actions are specific and actionable naming a responsible actor, a specific action, and a timeframe. They are not vague generic statements."
+    }
+  ]
+}

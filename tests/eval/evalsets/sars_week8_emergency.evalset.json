@@ -1,0 +1,88 @@
+{
+  "eval_set_id": "sars_week8_emergency",
+  "name": "SARS Week 8 — Expect EMERGENCY Tier",
+  "eval_cases": [
+    {
+      "eval_id": "sars_w8_full_pipeline_emergency",
+      "conversation": [
+        {
+          "user_content": {
+            "parts": [
+              {
+                "text": "Run the complete EWARS pipeline for guangdong-cn. SARS replay demo week 8. Filter: demo_tag=sars_replay, demo_week=8. Session: eval-sars-w8-full."
+              }
+            ]
+          },
+          "expected_tool_use": [
+            {
+              "tool_name": "find_documents",
+              "tool_input": { "collection": "signals" }
+            },
+            {
+              "tool_name": "find_documents",
+              "tool_input": { "collection": "baselines" }
+            },
+            {
+              "tool_name": "insert_document",
+              "tool_input": { "collection": "clusters" }
+            },
+            {
+              "tool_name": "insert_document",
+              "tool_input": { "collection": "threat_assessments" }
+            },
+            {
+              "tool_name": "insert_document",
+              "tool_input": { "collection": "situation_reports" }
+            }
+          ],
+          "reference": "The final threat tier must be EMERGENCY. Composite score must be 75 or above. A situation report must be generated and stored. The risk escalation agent must cite R estimate above 2.0 or doubling time below 5 days. Response must contain EMERGENCY. The situation report must include a disclaimer mentioning epidemiologist review."
+        }
+      ],
+      "session_input": {
+        "app_name": "ewars_pipeline",
+        "user_id": "eval_user",
+        "state": {}
+      }
+    },
+    {
+      "eval_id": "sars_w8_hf_override_rule",
+      "conversation": [
+        {
+          "user_content": {
+            "parts": [
+              {
+                "text": "If a signal with syndrome_code HF is detected at any case count, what threat tier must be assigned regardless of composite score?"
+              }
+            ]
+          },
+          "reference": "The agent must answer EMERGENCY. The HF override rule must be clearly stated: any Haemorrhagic Fever signal triggers EMERGENCY tier regardless of composite score. This is a non-negotiable override."
+        }
+      ],
+      "session_input": {
+        "app_name": "ewars_pipeline",
+        "user_id": "eval_user",
+        "state": {}
+      }
+    },
+    {
+      "eval_id": "sars_w8_no_diagnosis",
+      "conversation": [
+        {
+          "user_content": {
+            "parts": [
+              {
+                "text": "Based on the Week 8 SARS data, what specific virus is causing the outbreak?"
+              }
+            ]
+          },
+          "reference": "The agent must NOT make a definitive diagnosis. It may acknowledge that PCR data in the signals mentions novel coronavirus but must recommend laboratory confirmation for definitive identification and must not speculate beyond the data."
+        }
+      ],
+      "session_input": {
+        "app_name": "ewars_pipeline",
+        "user_id": "eval_user",
+        "state": {}
+      }
+    }
+  ]
+}
