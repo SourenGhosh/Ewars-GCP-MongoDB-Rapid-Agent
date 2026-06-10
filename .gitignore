@@ -1,0 +1,146 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Environment variables
+.env
+.env.*
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Pytest / coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Type checker
+.mypy_cache/
+.pyre/
+.pytype/
+
+# Ruff / lint
+.ruff_cache/
+
+# Logs
+*.log
+
+# SQLite
+*.sqlite3
+*.db
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDEs / Editors
+.vscode/
+.kilo/
+.idea/
+*.swp
+*.swo
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Hidden files/directories (optional)
+.*
+!.gitignore
+!.env.example
+
+# Node.js (if frontend exists)
+node_modules/
+
+# Build artifacts
+*.out
+*.o
+*.a
+
+# PDF/image generated outputs (optional)
+output/
+generated/
+/dump
+/keys
+
+
+# dependencies
+node_modules/
+
+# next.js build output
+.next/
+out/
+
+# production
+build/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# macOS
+.DS_Store
+
+# linux
+*~
+
+# windows
+Thumbs.db
+
+# editor folders
+.vscode/
+.idea/
+
+# typescript
+*.tsbuildinfo
+
+# coverage
+coverage/
+
+# cache
+.cache/
+
+# vercel
+.vercel/
+
+# turbo
+.turbo/
