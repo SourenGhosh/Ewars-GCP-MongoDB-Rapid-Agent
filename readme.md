@@ -12,8 +12,8 @@ EWARS is a multi-agent epidemic surveillance system built for the Google Cloud R
 | **Data Memory** | MongoDB Atlas (M10+), MongoDB MCP Server |
 | **Infrastructure** | Google Cloud Platform (GCP) |
 | **Runtime** | Vertex AI Agent Engine (Agent Runtime), Cloud Run |
-| **Observability** | Cloud Logging, BigQuery (Agent Analytics), ADK Eval |
-| **Frontend** | Next.js 14, Mapbox GL, Tailwind CSS |
+| **Observability** | Cloud Loggin, ADK Eval |
+| **Frontend** | Next.js 14, MapLibre, Tailwind CSS |
 
 ---
 
