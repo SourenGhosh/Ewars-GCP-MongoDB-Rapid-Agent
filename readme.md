@@ -1,4 +1,8 @@
 # EWARS
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
+[![Google ADK](https://img.shields.io/badge/Google_ADK-Multi--Agent-4285F4)](https://google.github.io/adk-docs/)
+[![MongoDB Atlas](https://img.shields.io/badge/MongoDB-Atlas_MCP-00ED64)](https://www.mongodb.com/atlas)
+
 ## Epidemic Early Warning and Response System
 
 ### 1. Executive Summary
@@ -366,3 +370,7 @@ EWARS demonstrates its value by replaying the 2002 SARS outbreak data:
 *   **Week 1:** Detects "WATCH" tier (Nov 2002).
 *   **Week 8:** Escalates to "EMERGENCY" (Jan 2003).
 *   **Advantage:** Detects the emergency 54 days before the official WHO global alert in March 2003.
+
+## License
+
+Apache License 2.0 — see [LICENSE](LICENSE)
